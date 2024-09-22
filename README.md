@@ -18,4 +18,4 @@ The PCB is wired to use the following I/O pins from the ATtiny85:
 - MIC_PIN A1
 - BUTTON_PIN A3
 
-The other pins are not connected
+The other pins are not connected but have seperate solder pads so you can extend the I/O capabilities
