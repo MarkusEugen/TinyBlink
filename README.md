@@ -6,11 +6,14 @@ This is a simple demo on how to use the TinyBlink board - it requires Arduino ID
 
 *<Adafruit_NeoPixel.h>*
 
-This example shows how to respond to button clicks and how read the microphone. The button logic can identify a shot click and a longer press and hold:
+The examples shows how to respond to button clicks and how read the microphone. The button logic can identify a shot click and a longer press and hold:
 - **click** switches the color
 - **press and hold** adjusts the brightness
 
-The analog reading from the microphone will animate the LEDs
+What the example apps do:
+- **TinyBlink_demo.ino**: The analog reading from the microphone will animate the LEDs
+- **whitepoint.ino**: Button click will change the whitepoint of the LEDs
+
 
 ---
 The PCB is wired to use the following I/O pins from the ATtiny85:
