@@ -8,7 +8,7 @@
 #include <EEPROM.h>
 #include <Adafruit_NeoPixel.h>
 
-#define LED_COUNT 20
+#define LED_COUNT 12
 #define LED_COUNT_HALF (LED_COUNT / 2)
 #define LED_PIN 1
 #define MIC_PIN A1
@@ -23,7 +23,7 @@ float gPegel_smooth;
 uint16_t gButtonState = 0;  // Current debounce status
 bool gWasLongPress = false;
 
-uint32_t getColor(uint8_t val) 
+uint32_t getColor(uint8_t val)
 {
   const uint8_t niceHue[7] = { 20, 80, 128, 170, 190, 240, 0 };
   uint32_t color;
@@ -42,7 +42,7 @@ uint32_t getColor(uint8_t val)
   return color;
 }
 
-void pegeleffect() 
+void pegeleffect()
 {
   uint32_t color = getColor(127);
   uint32_t colorOff = getColor(0);
@@ -107,9 +107,6 @@ void loop() {
   //------------------------- paint LEDs
   gManuColor = gColorEEPROM % 9;
 
-  if (gWasLongPress)
-    delay(20);
-
   pegeleffect();
 
   //------------------------- read button
@@ -124,5 +121,6 @@ void loop() {
     }
   }
 
+  delay(10);
   ledStrip.show();
 }
